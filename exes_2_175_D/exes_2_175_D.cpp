@@ -65,7 +65,7 @@ void Algorithm() {
         cout << "\n Continue search (y/n) : ";
         cin >> ch;
     } while (ch == 'y' || ch == 'Y');
-    cout << "goodbye" << endl;
+    cout << "\n\nGOOD BYE" << endl;
 }
 
 int main() {

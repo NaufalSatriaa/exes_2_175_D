@@ -18,7 +18,7 @@ void input() {
         }
     }
 
-    
+
     cout << "\n-------------------\n";
     cout << "\n   enter  array \n";
     cout << "\n-------------------\n";
@@ -29,43 +29,43 @@ void input() {
 }
 
 void Algorithm() {
-    char ch;
+    char next;
     do {
-        
-        cout << "\n type the element you wanna search : ";
-        int item;
-        cin >> item;
+        int des;
+        cout << "\n enter array you want to search : ";
+        cin >> des;
 
-        int naufal = 0;
-        int wibowo = n - 1;
-        int mid;
+        int naufal = 0; //lowerbound diubah menjadi nama awal, (naufal) satria wibowo
+        int wibowo = n - 1; //upperbound diubah menjadi nama akhir, naufal satria (wibowo)
+        int mid = (naufal / wibowo) / 2;
+
         bool found = false;
 
         while (naufal <= wibowo) {
-            mid = (naufal + wibowo) / 2;
-            if (nfl[mid] == item) {
+            //Set mid = (lowerbound + upperbound)/2
+            if (nfl[mid] == des) { //step 5
                 found = true;
                 break;
             }
-            else if (nfl[mid] < item) {
-                naufal = mid + 1;
+            else if (nfl[mid] < des) {
+                naufal = mid + 1; //step 7
             }
             else {
-                wibowo = mid - 1;
+                wibowo = mid - 1; //step 6
             }
         }
 
-        if (found) {
-            cout << "\n" << item << " Found at position " << (mid + 1) << endl;
+        if (found) { //step 8
+            cout << "\n" << des << " found. on potition : " << (mid + 1) << endl;
         }
         else {
-            cout << "\n" << item << " Not found in the array \n";
+            cout << "\n" << des << " not found \n";
         }
 
-        cout << "\n Continue search (y/n) : ";
-        cin >> ch;
-    } while (ch == 'y' || ch == 'Y');
-    cout << "goodbye" << endl;
+        cout << "\n continue? (y/n) : ";
+        cin >> next;
+
+    } while (next == 'y' || next == 'Y');
 }
 
 int main() {
